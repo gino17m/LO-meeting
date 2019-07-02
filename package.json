@@ -2,18 +2,22 @@
   "name": "lo-meeting",
   "version": "0.0.0",
   "engines": {
-    "node": "11.7.0"
+    "node": "11.7.0",
+    "npm": "6.5.0"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod=true --aot=true",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod",
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~8.0.2",
+    "@angular/compiler-cli": "~8.0.0",
     "@angular/animations": "~8.0.0",
     "@angular/common": "~8.0.0",
     "@angular/compiler": "~8.0.0",
@@ -28,8 +32,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
-    "@angular/cli": "~8.0.2",
-    "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
